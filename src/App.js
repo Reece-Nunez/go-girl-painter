@@ -80,7 +80,7 @@ function App() {
       <div className='partners'>
         <h1>Our Partners</h1>
         <div className='partners-logos'>
-          <img src='images/partner.png'/>
+          <img src='images/partner.png' alt='partner image'/>
         </div>
       </div>
     </div>
