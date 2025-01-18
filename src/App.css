@@ -228,7 +228,7 @@ a:hover {
 }
 
 .gallery-image {
-  width: 100%;
+  width: 95%;
   height: 500px; /* Consistent height for all images */
   object-fit: contain; /* Maintain aspect ratio */
   border-radius: 10px; /* Optional rounded corners */
