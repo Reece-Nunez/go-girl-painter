@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 function App() {
   const galleryImages = [
-    "pic1.JPG",
+    "pic1.jpg",
     "pic2.jpg",
     "pic3.jpg",
     "pic4.jpg",
@@ -19,7 +19,7 @@ function App() {
     "pic11.jpg",
     "pic12.jpg",
     "pic13.jpg",
-    "pic14.JPG",
+    "pic14.jpg",
     "pic15.jpg",
     "pic16.jpg",
     "pic17.jpg",
