@@ -4,6 +4,15 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useState } from "react";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHome } from "@fortawesome/free-solid-svg-icons";
+import { faCouch } from "@fortawesome/free-solid-svg-icons";
+import { faTree } from "@fortawesome/free-solid-svg-icons";
+import { faBrush } from "@fortawesome/free-solid-svg-icons";
+import { faSquare } from "@fortawesome/free-solid-svg-icons";
+
+
 
 function App() {
   const [activeService, setActiveService] = useState(null);
@@ -11,34 +20,34 @@ function App() {
   const services = [
     {
       name: "Decks",
-      icon: "🪵",
+      icon: <FontAwesomeIcon icon={faBrush} />,
       description: "We paint and stain decks for your outdoor space.",
     },
     {
       name: "Fences",
-      icon: "🏡",
+      icon: <FontAwesomeIcon icon={faBars} />, // Replace with custom SVG or other icon if preferred
       description:
         "Professional painting and staining for all types of fences.",
     },
     {
       name: "Exterior",
-      icon: "🏠",
+      icon: <FontAwesomeIcon icon={faHome} />,
       description: "Exterior painting to revitalize your home’s look.",
     },
     {
       name: "Interior",
-      icon: "🛋️",
+      icon: <FontAwesomeIcon icon={faCouch} />,
       description:
         "High-quality interior painting tailored to your preferences.",
     },
     {
       name: "Cabinets",
-      icon: "🗄️",
+      icon: <FontAwesomeIcon icon={faSquare} />,
       description: "Cabinet refinishing and painting for a modern touch.",
     },
     {
       name: "Wood Staining",
-      icon: "🌲",
+      icon: <FontAwesomeIcon icon={faTree} />,
       description:
         "Premium wood staining to protect and enhance your wood surfaces.",
     },
@@ -142,16 +151,41 @@ function App() {
         </div>
       </div>
       <div className="quote-section">
-        <h1>To Get A Quote Call Or Text:</h1>
-        <p>333-333-3333</p>
+        <h1 className="quote-title">Get Your Free Quote</h1>
+        <p className="quote-text">Call or Text Us At:</p>
+        <a href="tel:3333333333" className="quote-number">
+          333-333-3333
+        </a>
       </div>
-      <div className="partners">
-        <h1>Our Partners</h1>
+
+      <div className="partners-section">
+        <h1 className="partners-title">Our Trusted Partners</h1>
         <div className="partners-logos">
           <img
             src={process.env.PUBLIC_URL + "/images/partner.png"}
-            alt="partner image"
+            alt="Partner Logo"
+            className="partner-logo"
           />
+        </div>
+      </div>
+      <div className="footer">
+        <div className="footer-content">
+          <p className="footer-text">
+            © 2025 Go-Girl Painting. All rights reserved.
+          </p>
+          <a
+            href="https://www.facebook.com/profile.php?id=100083751551269"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer-link"
+          >
+            <img
+              src={process.env.PUBLIC_URL + "/images/facebook-icon.png"}
+              alt="Facebook"
+              className="footer-icon"
+            />
+            Visit us on Facebook
+          </a>
         </div>
       </div>
     </div>
