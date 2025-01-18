@@ -13,13 +13,20 @@ import { faBrush } from "@fortawesome/free-solid-svg-icons";
 import { faSquare } from "@fortawesome/free-solid-svg-icons";
 import { faBuilding } from "@fortawesome/free-solid-svg-icons";
 import { faPaintRoller } from "@fortawesome/free-solid-svg-icons";
-import { motion } from "framer-motion";
+import { useEffect } from "react";
+import AOS from "aos";
 
 
 
 function App() {
   const [activeService, setActiveService] = useState(null);
   
+  useEffect(() => {
+    AOS.init({
+      duration: 1500, // Animation duration in ms
+      once: true, // Only animate once per element
+    });
+  }, []);
 
   const services = [
     {
@@ -163,7 +170,7 @@ function App() {
           </li>
         </ul>
       </header>
-      <div className="hero-section">
+      <div className="hero-section" data-aos="fade-up">
         <p className="title-paragraph">Commercial & Residential</p>
         <h1 className="title">Painting Services</h1>
         <button
@@ -177,7 +184,7 @@ function App() {
           Get A Quote
         </button>{" "}
       </div>
-      <motion.div className="services-section" id="services-section">
+      <div className="services-section" id="services-section" data-aos="fade-up">
         <h1 className="services-title">Our Services</h1>
         <ul className="services-list">
           {services.map((service, index) => (
@@ -194,8 +201,8 @@ function App() {
             </li>
           ))}
         </ul>
-      </motion.div>
-      <motion.div className="gallery-section" id="gallery-section">
+      </div>
+      <div className="gallery-section" id="gallery-section" data-aos="fade-out">
         <h1 className="gallery-title">Commercial Work</h1>
         <div className="carousel-container">
           <Slider {...settings}>
@@ -210,8 +217,8 @@ function App() {
             ))}
           </Slider>
         </div>
-      </motion.div>
-      <motion.div className="gallery-section" id="gallery-section">
+      </div>
+      <div className="gallery-section" id="gallery-section" data-aos="fade-right">
         <h1 className="gallery-title">Resedential Work</h1>
         <div className="carousel-container">
           <Slider {...settings}>
@@ -226,16 +233,16 @@ function App() {
             ))}
           </Slider>
         </div>
-      </motion.div>
-      <motion.div className="quote-section" id="quote-section">
+      </div>
+      <div className="quote-section" id="quote-section" data-aos="fade-up">
         <h1 className="quote-title">Get Your Free Quote</h1>
         <p className="quote-text">Call or Text Us At:</p>
         <a href="tel:402-303-2541" className="quote-number">
         402-303-2541
         </a>
-      </motion.div>
+      </div>
 
-      <motion.div className="partners-section">
+      <div className="partners-section" data-aos="fade-in">
         <h1 className="partners-title">Our Trusted Partners</h1>
         <div className="partners-logos">
           <img
@@ -248,7 +255,7 @@ function App() {
         <a href="tel:402-705-9513" className="quote-number">
         402-3705-9513
         </a>
-      </motion.div>
+      </div>
       <div className="footer">
         <div className="footer-content">
           <p className="footer-text">
