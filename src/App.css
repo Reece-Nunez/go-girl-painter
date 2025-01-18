@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
 }
@@ -30,13 +34,14 @@ body {
 
 a:hover {
   background-color: #e68996;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 .links {
   margin-right: 10em;
   margin-top: 0;
   margin-bottom: 0;
+  font-size: 20px;
 }
 
 .App-logo {
@@ -194,7 +199,7 @@ a:hover {
 .gallery-section {
   padding: 40px;
   text-align: center;
-  background-color: #f4f4f4;
+  background-color: #f8e6e8;
 }
 
 .gallery-title {
@@ -224,7 +229,7 @@ a:hover {
 
 .gallery-image {
   width: 100%;
-  height: 300px; /* Consistent height for all images */
+  height: 500px; /* Consistent height for all images */
   object-fit: contain; /* Maintain aspect ratio */
   border-radius: 10px; /* Optional rounded corners */
   
@@ -285,14 +290,14 @@ a:hover {
   margin-bottom: 1rem;
 }
 
-.quote-text {
+.quote-text, .partner-name {
   font-size: 1.2rem;
   font-weight: 500;
   color: #555;
   margin-bottom: 0.5rem;
 }
 
-.quote-number {
+.quote-number, .partner-phone {
   font-size: 1.5rem;
   font-weight: bold;
   color: #e68996;
@@ -309,9 +314,15 @@ a:hover {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
+.partner-phone:hover {
+  background: #ee7081;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
 .partners-section {
   padding: 2rem 1rem;
-  background: linear-gradient(135deg, #f9f9f9, #f8d4d9);
+  background: linear-gradient(135deg, #ffffff, #f8d4d9);
   border-radius: 10px;
   text-align: center;
   margin: 2rem 0;

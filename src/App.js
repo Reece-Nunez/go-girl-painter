@@ -11,6 +11,8 @@ import { faCouch } from "@fortawesome/free-solid-svg-icons";
 import { faTree } from "@fortawesome/free-solid-svg-icons";
 import { faBrush } from "@fortawesome/free-solid-svg-icons";
 import { faSquare } from "@fortawesome/free-solid-svg-icons";
+import { faBuilding } from "@fortawesome/free-solid-svg-icons";
+import { faPaintRoller } from "@fortawesome/free-solid-svg-icons";
 
 
 
@@ -19,20 +21,19 @@ function App() {
 
   const services = [
     {
-      name: "Decks",
-      icon: <FontAwesomeIcon icon={faBrush} />,
-      description: "We paint and stain decks for your outdoor space.",
+      name: "Commercial",
+      icon: <FontAwesomeIcon icon={faBuilding} />,
+      description: "Professional painting services tailored for offices, retail spaces, and commercial properties.",
     },
     {
-      name: "Fences",
-      icon: <FontAwesomeIcon icon={faBars} />, // Replace with custom SVG or other icon if preferred
-      description:
-        "Professional painting and staining for all types of fences.",
+      name: "Residential",
+      icon: <FontAwesomeIcon icon={faHome} />,
+      description: "Transform your home with expert interior and exterior painting services.",
     },
     {
       name: "Exterior",
-      icon: <FontAwesomeIcon icon={faHome} />,
-      description: "Exterior painting to revitalize your home’s look.",
+      icon: <FontAwesomeIcon icon={faPaintRoller} />,
+      description: "High-quality exterior painting to enhance the beauty and durability of your property.",
     },
     {
       name: "Interior",
@@ -51,31 +52,41 @@ function App() {
       description:
         "Premium wood staining to protect and enhance your wood surfaces.",
     },
+    {
+      name: "Decks",
+      icon: <FontAwesomeIcon icon={faBrush} />,
+      description: "We paint and stain decks for your outdoor space.",
+    },
+    {
+      name: "Fences",
+      icon: <FontAwesomeIcon icon={faBars} />, // Replace with custom SVG or other icon if preferred
+      description:
+        "Professional painting and staining for all types of fences.",
+    },
   ];
 
   const toggleService = (index) => {
     setActiveService(activeService === index ? null : index); // Toggle the clicked service
   };
 
-  const galleryImages = [
-    "pic1.jpg",
-    "pic2.jpg",
-    "pic3.jpg",
-    "pic4.jpg",
-    "pic5.jpg",
-    "pic6.jpg",
-    "pic7.jpg",
-    "pic8.jpg",
-    "pic9.jpg",
-    "pic10.jpg",
-    "pic11.jpg",
-    "pic12.jpg",
-    "pic13.jpg",
-    "pic14.jpg",
-    "pic15.jpg",
-    "pic16.jpg",
-    "pic17.jpg",
+  const commercialImages = [
+    
+    "commercial1.jpg",
+    "commercial2.jpg",
+    "commercial3.jpg",
+    "commercial4.jpg",
+    
   ];
+
+  const resedentialImages = [
+    
+    "residential1.jpg",
+    "residential2.jpg",
+    "residential3.jpg",
+    "residential4.jpg",
+    "residential5.jpg",
+
+  ]
 
   const settings = {
     dots: true, // Enable navigation dots
@@ -104,19 +115,28 @@ function App() {
             <a href="/">Home</a>
           </li>
           <li className="nav-item">
-            <a href="/services">Services</a>
+            <a href="#services-section">Services</a>
           </li>
           <li className="nav-item">
-            <a href="/gallery">Gallery</a>
+            <a href="#gallery-section">Gallery</a>
           </li>
         </ul>
       </header>
       <div className="hero-section">
         <p className="title-paragraph">Commercial & Residential</p>
         <h1 className="title">Painting Services</h1>
-        <button className="brush-button">Get A Quote</button>
+        <button
+          className="brush-button"
+          onClick={() =>
+            document
+              .getElementById("quote-section")
+              .scrollIntoView({ behavior: "smooth" })
+          }
+        >
+          Get A Quote
+        </button>{" "}
       </div>
-      <div className="services-section">
+      <div className="services-section" id="services-section">
         <h1 className="services-title">Our Services</h1>
         <ul className="services-list">
           {services.map((service, index) => (
@@ -134,11 +154,11 @@ function App() {
           ))}
         </ul>
       </div>
-      <div className="gallery-section">
-        <h1 className="gallery-title">Gallery Of Our Work</h1>
+      <div className="gallery-section" id="gallery-section">
+        <h1 className="gallery-title">Commercial Work</h1>
         <div className="carousel-container">
           <Slider {...settings}>
-            {galleryImages.map((pic, index) => (
+            {commercialImages.map((pic, index) => (
               <div key={index} className="slide">
                 <img
                   src={`/images/${pic}`}
@@ -150,11 +170,27 @@ function App() {
           </Slider>
         </div>
       </div>
-      <div className="quote-section">
+      <div className="gallery-section" id="gallery-section">
+        <h1 className="gallery-title">Resedential Work</h1>
+        <div className="carousel-container">
+          <Slider {...settings}>
+            {resedentialImages.map((pic, index) => (
+              <div key={index} className="slide">
+                <img
+                  src={`/images/${pic}`}
+                  alt={`Work ${index + 1}`}
+                  className="gallery-image"
+                />
+              </div>
+            ))}
+          </Slider>
+        </div>
+      </div>
+      <div className="quote-section" id="quote-section">
         <h1 className="quote-title">Get Your Free Quote</h1>
         <p className="quote-text">Call or Text Us At:</p>
-        <a href="tel:3333333333" className="quote-number">
-          333-333-3333
+        <a href="tel:402-303-2541" className="quote-number">
+        402-303-2541
         </a>
       </div>
 
@@ -167,6 +203,10 @@ function App() {
             className="partner-logo"
           />
         </div>
+        <p className="partner-name">Micheal Hohlfeld</p>
+        <a href="tel:402-705-9513" className="quote-number">
+        402-3705-9513
+        </a>
       </div>
       <div className="footer">
         <div className="footer-content">
