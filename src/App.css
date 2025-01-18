@@ -1,9 +1,23 @@
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
 .nav-bar {
   display: inline-flex;
   justify-content: space-between;
   width: 100%;
   align-items: center;
-  position: sticky;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+  z-index: 1;
+}
+
+.nav-item a.active {
+  color: #e68996;
+  font-weight: bold;
+  border-bottom: 2px solid #e68996;
 }
 
 .nav-item, a {
@@ -37,6 +51,15 @@ a:hover {
   height: 80vh;
   background: linear-gradient(to bottom right,#e68996, #FCE4EC);
   color: white;
+  animation: fadeIn 1.5s ease-in-out;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .title, .title-paragraph {
@@ -71,6 +94,7 @@ a:hover {
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   width: 12em;
+  
 }
 
 .brush-button:hover {
@@ -127,6 +151,12 @@ a:hover {
   height: 300px; /* Consistent height for all images */
   object-fit: contain; /* Maintain aspect ratio */
   border-radius: 10px; /* Optional rounded corners */
+  
+}
+
+.gallery-image:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .slick-dots li button:before {
