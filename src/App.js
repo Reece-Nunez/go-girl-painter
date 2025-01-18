@@ -13,11 +13,13 @@ import { faBrush } from "@fortawesome/free-solid-svg-icons";
 import { faSquare } from "@fortawesome/free-solid-svg-icons";
 import { faBuilding } from "@fortawesome/free-solid-svg-icons";
 import { faPaintRoller } from "@fortawesome/free-solid-svg-icons";
+import { motion } from "framer-motion";
 
 
 
 function App() {
   const [activeService, setActiveService] = useState(null);
+  
 
   const services = [
     {
@@ -75,6 +77,27 @@ function App() {
     "commercial2.jpg",
     "commercial3.jpg",
     "commercial4.jpg",
+    "commercial5.jpg",
+    "commercial6.jpg",
+    "commercial7.jpg",
+    "commercial8.jpg",
+    "commercial9.jpg",
+    "commercial10.jpg",
+    "commercial11.jpg",
+    "commercial12.jpg",
+    "commercial13.jpg",
+    "commercial14.jpg",
+    "commercial15.jpg",
+    "commercial16.jpg",
+    "commercial17.jpg",
+    "commercial18.jpg",
+    "commercial19.jpg",
+    "commercial20.jpg",
+    "commercial21.jpg",
+    "commercial22.jpg",
+    "commercial23.jpg",
+    "commercial24.jpg",
+    "commercial25.jpg",
     
   ];
 
@@ -85,6 +108,24 @@ function App() {
     "residential3.jpg",
     "residential4.jpg",
     "residential5.jpg",
+    "residential6.jpg",
+    "residential7.jpg",
+    "residential8.jpg",
+    "residential9.jpg",
+    "residential10.jpg",
+    "residential11.jpg",
+    "residential12.jpg",
+    "residential13.jpg",
+    "residential14.jpg",
+    "residential15.jpg",
+    "residential16.jpg",
+    "residential17.jpg",
+    "residential18.jpg",
+    "residential19.jpg",
+    "residential20.jpg",
+    "residential21.jpg",
+    "residential22.jpg",
+    "residential23.jpg",
 
   ]
 
@@ -136,7 +177,7 @@ function App() {
           Get A Quote
         </button>{" "}
       </div>
-      <div className="services-section" id="services-section">
+      <motion.div className="services-section" id="services-section">
         <h1 className="services-title">Our Services</h1>
         <ul className="services-list">
           {services.map((service, index) => (
@@ -153,8 +194,8 @@ function App() {
             </li>
           ))}
         </ul>
-      </div>
-      <div className="gallery-section" id="gallery-section">
+      </motion.div>
+      <motion.div className="gallery-section" id="gallery-section">
         <h1 className="gallery-title">Commercial Work</h1>
         <div className="carousel-container">
           <Slider {...settings}>
@@ -169,8 +210,8 @@ function App() {
             ))}
           </Slider>
         </div>
-      </div>
-      <div className="gallery-section" id="gallery-section">
+      </motion.div>
+      <motion.div className="gallery-section" id="gallery-section">
         <h1 className="gallery-title">Resedential Work</h1>
         <div className="carousel-container">
           <Slider {...settings}>
@@ -185,16 +226,16 @@ function App() {
             ))}
           </Slider>
         </div>
-      </div>
-      <div className="quote-section" id="quote-section">
+      </motion.div>
+      <motion.div className="quote-section" id="quote-section">
         <h1 className="quote-title">Get Your Free Quote</h1>
         <p className="quote-text">Call or Text Us At:</p>
         <a href="tel:402-303-2541" className="quote-number">
         402-303-2541
         </a>
-      </div>
+      </motion.div>
 
-      <div className="partners-section">
+      <motion.div className="partners-section">
         <h1 className="partners-title">Our Trusted Partners</h1>
         <div className="partners-logos">
           <img
@@ -207,7 +248,7 @@ function App() {
         <a href="tel:402-705-9513" className="quote-number">
         402-3705-9513
         </a>
-      </div>
+      </motion.div>
       <div className="footer">
         <div className="footer-content">
           <p className="footer-text">
