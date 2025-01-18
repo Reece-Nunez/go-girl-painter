@@ -1,0 +1,83 @@
+.nav-bar {
+  display: inline-flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
+li, a {
+  display: inline-flex;
+  text-decoration: none;
+  padding: 8px;
+  color: black;
+  font-weight: 500;
+}
+
+a:hover {
+  background-color: #e68996;
+  border-radius: 20px;
+}
+
+.links {
+  margin-right: 10em;
+}
+
+.App-logo {
+  height: 80px;
+  width: auto;
+  padding: 5px;
+  margin-left: 10em;
+}
+
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+  background: linear-gradient(to bottom right,#e68996, #FCE4EC);
+  color: white;
+}
+
+.title, .title-paragraph {
+  margin: 0;
+}
+
+.title, .title-paragraph, button {
+  margin-left: 180px;
+}
+
+.title-paragraph {
+  margin-top: 300px;
+  font-size: 18px;
+}
+
+.title {
+  font-size: 72px;
+}
+
+.brush-button {
+  display: inline-block;
+  position: relative;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-family: 'Brush Script MT', cursive; /* Optional, for a brush font look */
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: url('brush-stroke.svg') no-repeat center;
+  background-size: cover;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.brush-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.brush-button:active {
+  transform: scale(0.98);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
