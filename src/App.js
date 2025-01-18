@@ -3,8 +3,51 @@ import "./App.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useState } from "react";
 
 function App() {
+  const [activeService, setActiveService] = useState(null);
+
+  const services = [
+    {
+      name: "Decks",
+      icon: "🪵",
+      description: "We paint and stain decks for your outdoor space.",
+    },
+    {
+      name: "Fences",
+      icon: "🏡",
+      description:
+        "Professional painting and staining for all types of fences.",
+    },
+    {
+      name: "Exterior",
+      icon: "🏠",
+      description: "Exterior painting to revitalize your home’s look.",
+    },
+    {
+      name: "Interior",
+      icon: "🛋️",
+      description:
+        "High-quality interior painting tailored to your preferences.",
+    },
+    {
+      name: "Cabinets",
+      icon: "🗄️",
+      description: "Cabinet refinishing and painting for a modern touch.",
+    },
+    {
+      name: "Wood Staining",
+      icon: "🌲",
+      description:
+        "Premium wood staining to protect and enhance your wood surfaces.",
+    },
+  ];
+
+  const toggleService = (index) => {
+    setActiveService(activeService === index ? null : index); // Toggle the clicked service
+  };
+
   const galleryImages = [
     "pic1.jpg",
     "pic2.jpg",
@@ -67,12 +110,19 @@ function App() {
       <div className="services-section">
         <h1 className="services-title">Our Services</h1>
         <ul className="services-list">
-          <li className="service-item">Decks</li>
-          <li className="service-item">Fences</li>
-          <li className="service-item">Exterior</li>
-          <li className="service-item">Interior</li>
-          <li className="service-item">Cabinets</li>
-          <li className="service-item">Wood Staining</li>
+          {services.map((service, index) => (
+            <li
+              key={index}
+              className="service-item"
+              onClick={() => toggleService(index)}
+            >
+              <div className="service-icon">{service.icon}</div>
+              <p className="service-name">{service.name}</p>
+              {activeService === index && (
+                <p className="service-description">{service.description}</p>
+              )}
+            </li>
+          ))}
         </ul>
       </div>
       <div className="gallery-section">
