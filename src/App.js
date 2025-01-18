@@ -82,7 +82,7 @@ function App() {
             {galleryImages.map((pic, index) => (
               <div key={index} className="slide">
                 <img
-                  src={process.env.PUBLIC_URL + `/images/${pic}`}
+                  src={`/images/${pic}`}
                   alt={`Work ${index + 1}`}
                   className="gallery-image"
                 />
