@@ -3,9 +3,10 @@
   justify-content: space-between;
   width: 100%;
   align-items: center;
+  position: sticky;
 }
 
-li, a {
+.nav-item, a {
   display: inline-flex;
   text-decoration: none;
   padding: 8px;
@@ -20,12 +21,13 @@ a:hover {
 
 .links {
   margin-right: 10em;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .App-logo {
   height: 80px;
   width: auto;
-  padding: 5px;
   margin-left: 10em;
 }
 
@@ -41,7 +43,7 @@ a:hover {
   margin: 0;
 }
 
-.title, .title-paragraph, button {
+.title, .title-paragraph, button, .services-title, .services-list {
   margin-left: 180px;
 }
 
@@ -59,10 +61,8 @@ a:hover {
   position: relative;
   padding: 10px 20px;
   font-size: 16px;
-  font-family: 'Brush Script MT', cursive; /* Optional, for a brush font look */
   color: white;
   text-decoration: none;
-  text-transform: uppercase;
   letter-spacing: 1px;
   background: url('brush-stroke.svg') no-repeat center;
   background-size: cover;
@@ -70,14 +70,97 @@ a:hover {
   outline: none;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 12em;
 }
 
 .brush-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transform: scale(1.1);
 }
 
 .brush-button:active {
   transform: scale(0.98);
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
+
+.services-list {
+  padding-left: 0;
+}
+
+.service-item {
+  list-style: none;
+  padding: 10px;
+}
+
+/* Gallery Section */
+.gallery-section {
+  padding: 40px;
+  text-align: center;
+  background-color: #f4f4f4;
+}
+
+.gallery-title {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #e68996;
+  text-transform: uppercase;
+}
+
+/* Centered Carousel Effect */
+.carousel-container {
+  max-width: 80%; /* Limit the carousel width */
+  margin: 0 auto; /* Center the carousel */
+  position: relative;
+}
+
+.slick-slide {
+  opacity: 0.5; /* Make non-center images semi-transparent */
+  transform: scale(0.8); /* Shrink non-center images */
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transition */
+}
+
+.slick-center {
+  opacity: 1; /* Fully opaque for the center image */
+  transform: scale(1.2); /* Scale up the center image */
+}
+
+.gallery-image {
+  width: 100%;
+  height: 300px; /* Consistent height for all images */
+  object-fit: contain; /* Maintain aspect ratio */
+  border-radius: 10px; /* Optional rounded corners */
+}
+
+.slick-dots li button:before {
+  color: #e68996;
+}
+
+.slick-prev, .slick-next {
+  position: absolute !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  z-index: 2 !important;
+  width: 60px !important;
+  height: 60px !important;
+  color: black !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  cursor: pointer !important;
+  opacity: 0.8 !important;
+  transition: opacity 0.3s ease !important;
+}
+
+.slick-prev:before, .slick-next:before {
+  font-size: 20px !important;
+  color: rgb(0, 0, 0) !important;
+}
+
+.slick-prev {
+  left: -300px !important;
+}
+
+.slick-next {
+  right: -120px !important;
+}
+
+
