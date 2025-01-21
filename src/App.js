@@ -16,11 +16,10 @@ import { faPaintRoller } from "@fortawesome/free-solid-svg-icons";
 import { useEffect } from "react";
 import AOS from "aos";
 
-
-
 function App() {
   const [activeService, setActiveService] = useState(null);
-  
+  const [isShrunk, setIsShrunk] = useState(false);
+
   useEffect(() => {
     AOS.init({
       duration: 1500, // Animation duration in ms
@@ -28,21 +27,76 @@ function App() {
     });
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsShrunk(true); // Shrink navbar
+      } else {
+        setIsShrunk(false); // Reset navbar
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const reviews = [
+    {
+      name: "Tiffany-Joel Tilton",
+      text: "Just hired Missy at Go-Girl Paintings LLC for my home (interior paint). She did a fantastic job!! Seriously can’t say enough good about it. She was priced right, fast, and the work was perfection!! My home looks amazing!!  Thank you Missy!! 😍",
+      rating: 5,
+    },
+    {
+      name: "Kay Sommerfeld",
+      text: "Missy is an experienced Professional painter.  She dedicates herself to the job at hand. My kitchen was built in 1935 and I have a NEW kitchen.  I highly recommend Missy!",
+      rating: 5,
+    },
+    {
+      name: "Devin Marks",
+      text: "We were introduced to Missy through mutual friends for a large job that we needed to complete. Missy came and gave a fair assessment and bid. Missy not only completed the entire project on time she shared her design eye with us to make sure that we used the correct color combinations. The job had some very difficult aspects to it but she delivered on all her promises, and it was a pleasure to work with her. I would recommend Missy to anyone that needs a painting project completed.",
+      rating: 5,
+    },
+    {
+      name: "Kasey Ann",
+      text: "I’d highly recommend Go-Girl Painting, Missy was very nice to work with when it came time to paint our homes exterior. She provided excellent communication from the very start, and worked to fit us in at the last minute on Father’s Day! She was so kind to my curious 7 year old who wanted to watch her work and even got to do some painting. Very reasonable and upfront pricing and quality work. We love the way our home looks!",
+      rating: 5,
+    },
+    {
+      name: "Diana Greenblatt-Seay",
+      text: "We hired Go-Girl Paintings to paint our whole basement, including a bathroom, laundry room, bedroom, family room and stairway, including ceilings. The work was exceptional, quick and very reasonably priced. Communication and coordination was also a great experience. We highly recommend using Go-Girl Paintings!",
+      rating: 5,
+    },
+  ];
+
+  const renderStars = (rating) => {
+    return Array.from({ length: 5 }).map((_, index) => (
+      <span key={index} className={`star ${index < rating ? "filled" : ""}`}>
+        ★
+      </span>
+    ));
+  };
+
   const services = [
     {
       name: "Commercial",
       icon: <FontAwesomeIcon icon={faBuilding} />,
-      description: "Professional painting services tailored for offices, retail spaces, and commercial properties.",
+      description:
+        "Professional painting services tailored for offices, retail spaces, and commercial properties.",
     },
     {
       name: "Residential",
       icon: <FontAwesomeIcon icon={faHome} />,
-      description: "Transform your home with expert interior and exterior painting services.",
+      description:
+        "Transform your home with expert interior and exterior painting services.",
     },
     {
       name: "Exterior",
       icon: <FontAwesomeIcon icon={faPaintRoller} />,
-      description: "High-quality exterior painting to enhance the beauty and durability of your property.",
+      description:
+        "High-quality exterior painting to enhance the beauty and durability of your property.",
     },
     {
       name: "Interior",
@@ -79,7 +133,6 @@ function App() {
   };
 
   const commercialImages = [
-    
     "commercial1.jpg",
     "commercial2.jpg",
     "commercial3.jpg",
@@ -105,11 +158,9 @@ function App() {
     "commercial23.jpg",
     "commercial24.jpg",
     "commercial25.jpg",
-    
   ];
 
   const resedentialImages = [
-    
     "residential1.jpg",
     "residential2.jpg",
     "residential3.jpg",
@@ -133,8 +184,7 @@ function App() {
     "residential21.jpg",
     "residential22.jpg",
     "residential23.jpg",
-
-  ]
+  ];
 
   const settings = {
     dots: true, // Enable navigation dots
@@ -156,7 +206,7 @@ function App() {
 
   return (
     <div className="App">
-      <header className="nav-bar">
+      <header className={`nav-bar ${isShrunk ? "shrink" : ""}`}>
         <img src={logo} className="App-logo" alt="logo" />
         <ul className="links">
           <li className="nav-item">
@@ -184,7 +234,11 @@ function App() {
           Get A Quote
         </button>{" "}
       </div>
-      <div className="services-section" id="services-section" data-aos="fade-up">
+      <div
+        className="services-section"
+        id="services-section"
+        data-aos="fade-up"
+      >
         <h1 className="services-title">Our Services</h1>
         <ul className="services-list">
           {services.map((service, index) => (
@@ -218,8 +272,12 @@ function App() {
           </Slider>
         </div>
       </div>
-      <div className="gallery-section" id="gallery-section" data-aos="fade-right">
-        <h1 className="gallery-title">Resedential Work</h1>
+      <div
+        className="gallery-section"
+        id="gallery-section"
+        data-aos="fade-right"
+      >
+        <h1 className="gallery-title">Residential Work</h1>
         <div className="carousel-container">
           <Slider {...settings}>
             {resedentialImages.map((pic, index) => (
@@ -234,26 +292,43 @@ function App() {
           </Slider>
         </div>
       </div>
+      <section className="reviews-section">
+        <div className="reviews">
+          <h3>Customer Reviews:</h3>
+          <Slider {...settings} className="review-slider">
+            {reviews.map((review, index) => (
+              <div key={index} className="review">
+                <p className="review-text">"{review.text}"</p>
+                <p className="review-name">- {review.name}</p>
+                <p className="review-property">{review.property}</p>
+                <div className="review-stars">{renderStars(review.rating)}</div>
+              </div>
+            ))}
+          </Slider>
+        </div>
+      </section>
       <div className="quote-section" id="quote-section" data-aos="fade-up">
         <h1 className="quote-title">Get Your Free Quote</h1>
         <p className="quote-text">Call or Text Us At:</p>
         <a href="tel:402-303-2541" className="quote-number">
-        402-303-2541
+          402-303-2541
         </a>
       </div>
 
       <div className="partners-section" data-aos="fade-in">
         <h1 className="partners-title">Our Trusted Partners</h1>
         <div className="partners-logos">
-          <img
-            src={process.env.PUBLIC_URL + "/images/partner.png"}
-            alt="Partner Logo"
-            className="partner-logo"
-          />
+          <a href="https://brand.page/profixandbuildllc">
+            <img
+              src={process.env.PUBLIC_URL + "/images/partner.png"}
+              alt="Partner Logo"
+              className="partner-logo"
+            />
+          </a>
         </div>
         <p className="partner-name">Micheal Hohlfeld</p>
         <a href="tel:402-705-9513" className="quote-number">
-        402-3705-9513
+          402-3705-9513
         </a>
       </div>
       <div className="footer">
