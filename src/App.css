@@ -25,6 +25,11 @@ body {
   background-color: rgba(255, 255, 255, 0.3); /* Transparent background */
 }
 
+.review-note {
+  text-align: center;
+  font-size: 10px;
+}
+
 .nav-item a.active {
   color: #e68996;
   font-weight: bold;

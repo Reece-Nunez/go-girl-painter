@@ -305,6 +305,7 @@ function App() {
               </div>
             ))}
           </Slider>
+          <p className="review-note">*Reviews from Facebook</p>
         </div>
       </section>
       <div className="quote-section" id="quote-section" data-aos="fade-up">
@@ -334,7 +335,7 @@ function App() {
       <div className="footer">
         <div className="footer-content">
           <p className="footer-text">
-            © 2025 Go-Girl Painting. All rights reserved.
+            © 2025 Go-Girl Painting LLC. All rights reserved.
           </p>
           <a
             href="https://www.facebook.com/profile.php?id=100083751551269"
