@@ -158,6 +158,10 @@ function App() {
     "commercial23.jpg",
     "commercial24.jpg",
     "commercial25.jpg",
+    "commercial26.jpg",
+    "commercial27.jpg",
+    "commercial28.jpg",
+    "commercial29.jpg",
   ];
 
   const resedentialImages = [
@@ -184,6 +188,13 @@ function App() {
     "residential21.jpg",
     "residential22.jpg",
     "residential23.jpg",
+    "residential24.jpg",
+    "residential25.jpg",
+    "residential26.jpg",
+    "residential27.jpg",
+    "residential28.jpg",
+    "residential29.jpg",
+    "residential30.jpg",
   ];
 
   const settings = {
