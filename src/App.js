@@ -133,69 +133,69 @@ function App() {
   };
 
   const commercialImages = [
-    "commercial1.jpg",
-    "commercial2.jpg",
-    "commercial3.jpg",
-    "commercial4.jpg",
-    "commercial5.jpg",
-    "commercial6.jpg",
-    "commercial7.jpg",
-    "commercial8.jpg",
-    "commercial9.jpg",
-    "commercial10.jpg",
-    "commercial11.jpg",
-    "commercial12.jpg",
-    "commercial13.jpg",
-    "commercial14.jpg",
-    "commercial15.jpg",
-    "commercial16.jpg",
-    "commercial17.jpg",
-    "commercial18.jpg",
-    "commercial19.jpg",
-    "commercial20.jpg",
-    "commercial21.jpg",
-    "commercial22.jpg",
-    "commercial23.jpg",
-    "commercial24.jpg",
-    "commercial25.jpg",
-    "commercial26.jpg",
-    "commercial27.jpg",
-    "commercial28.jpg",
-    "commercial29.jpg",
-    "commercial30.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/commercial1.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/commercial2.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/commercial3.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/commercial4.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/commercial5.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/commercial6.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/commercial7.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/commercial8.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/commercial9.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/commercial10.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/commercial11.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/commercial12.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/commercial13.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/commercial14.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/commercial15.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/commercial16.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/commercial17.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/commercial18.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/commercial19.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/commercial20.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/commercial21.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/commercial22.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/commercial23.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/commercial24.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/commercial25.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/commercial26.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/commercial27.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/commercial28.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/commercial29.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/commercial30.jpg",
   ];
 
   const resedentialImages = [
-    "residential1.jpg",
-    "residential2.jpg",
-    "residential3.jpg",
-    "residential4.jpg",
-    "residential5.jpg",
-    "residential6.jpg",
-    "residential7.jpg",
-    "residential8.jpg",
-    "residential9.jpg",
-    "residential10.jpg",
-    "residential11.jpg",
-    "residential12.jpg",
-    "residential13.jpg",
-    "residential14.jpg",
-    "residential15.jpg",
-    "residential16.jpg",
-    "residential17.jpg",
-    "residential18.jpg",
-    "residential19.jpg",
-    "residential20.jpg",
-    "residential21.jpg",
-    "residential22.jpg",
-    "residential23.jpg",
-    "residential24.jpg",
-    "residential25.jpg",
-    "residential26.jpg",
-    "residential27.jpg",
-    "residential28.png",
-    "residential29.jpg",
-    "residential30.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/residential1.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/residential2.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/residential3.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/residential4.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/residential5.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/residential6.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/residential7.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/residential8.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/residential9.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/residential10.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/residential11.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/residential12.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/residential13.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/residential14.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/residential15.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/residential16.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/residential17.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/residential18.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/residential19.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/residential20.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/residential21.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/residential22.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/residential23.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/residential24.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/residential25.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/residential26.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/residential27.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/residential28.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/residential29.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/residential30.jpg",
   ];
 
   const settings = {
@@ -275,7 +275,7 @@ function App() {
             {commercialImages.map((pic, index) => (
               <div key={index} className="slide">
                 <img
-                  src={`/images/${pic}`}
+                  src={pic} // Use the full URL here
                   alt={`Work ${index + 1}`}
                   className="gallery-image"
                 />
@@ -295,7 +295,7 @@ function App() {
             {resedentialImages.map((pic, index) => (
               <div key={index} className="slide">
                 <img
-                  src={`/images/${pic}`}
+                  src={pic} // Use the full URL here
                   alt={`Work ${index + 1}`}
                   className="gallery-image"
                 />
@@ -304,6 +304,7 @@ function App() {
           </Slider>
         </div>
       </div>
+
       <section className="reviews-section">
         <div className="reviews">
           <h3>Customer Reviews:</h3>
