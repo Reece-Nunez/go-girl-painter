@@ -162,6 +162,7 @@ function App() {
     "commercial27.jpg",
     "commercial28.jpg",
     "commercial29.jpg",
+    "commercial30.jpg",
   ];
 
   const resedentialImages = [
@@ -192,7 +193,7 @@ function App() {
     "residential25.jpg",
     "residential26.jpg",
     "residential27.jpg",
-    "residential28.jpg",
+    "residential28.png",
     "residential29.jpg",
     "residential30.jpg",
   ];
