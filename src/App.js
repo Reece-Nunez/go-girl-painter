@@ -341,7 +341,7 @@ function App() {
         </div>
         <p className="partner-name">Micheal Hohlfeld</p>
         <a href="tel:402-705-9513" className="quote-number">
-          402-3705-9513
+          402-705-9513
         </a>
       </div>
       <div className="footer">
