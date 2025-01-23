@@ -196,6 +196,20 @@ function App() {
     "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/residential28.png",
     "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/residential29.jpg",
     "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/residential30.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/residential31.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/residential32.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/residential33.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/residential34.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/residential35.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/residential36.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/residential37.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/deck1.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/deck2.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/cabinet1jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/cabinet2.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/cabinet3.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/cabinet4.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/cabinet5.jpg",
   ];
 
   const settings = {
