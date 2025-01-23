@@ -205,7 +205,11 @@ function App() {
     "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/residential37.jpg",
     "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/deck1.jpg",
     "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/deck2.jpg",
+<<<<<<< HEAD
     "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/cabinet1.jpg",
+=======
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/cabinet1jpg",
+>>>>>>> b014c9d021c8873baa7e55254f62836866b5875e
     "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/cabinet2.jpg",
     "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/cabinet3.jpg",
     "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/cabinet4.jpg",
