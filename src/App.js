@@ -223,7 +223,16 @@ function App() {
   return (
     <div className="App">
       <header className={`nav-bar ${isShrunk ? "shrink" : ""}`}>
-        <img src={logo} className="App-logo" alt="logo" />
+        <a
+          href="#"
+          className="logo-link"
+          onClick={(e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
+        >
+          <img src={logo} className="App-logo" alt="logo" />
+        </a>
         <ul className="links">
           <li className="nav-item">
             <a href="/">Home</a>
@@ -237,19 +246,34 @@ function App() {
         </ul>
       </header>
       <div className="hero-section" data-aos="fade-up">
-        <p className="title-paragraph">Commercial & Residential</p>
-        <h1 className="title">Painting Services</h1>
-        <button
-          className="brush-button"
-          onClick={() =>
-            document
-              .getElementById("quote-section")
-              .scrollIntoView({ behavior: "smooth" })
-          }
-        >
-          Get A Quote
-        </button>{" "}
+        <div className="hero-content">
+          <div className="hero-text">
+            <p className="title-paragraph">Commercial & Residential</p>
+            <h1 className="title">Painting Services</h1>
+            <button
+              className="brush-button"
+              onClick={() =>
+                document
+                  .getElementById("quote-section")
+                  .scrollIntoView({ behavior: "smooth" })
+              }
+            >
+              Get A Quote
+            </button>
+          </div>
+          <div className="hero-image-container">
+            <div className="customer-review">
+              <p className="review-text">
+                "Just hired Missy at Go-Girl Paintings LLC for my home (exterior
+                paint). She did a fantastic job!! My home looks amazing!! Thank
+                you Missy!! 😍"
+              </p>
+              <p className="review-name">- Lisa Nunez</p>
+            </div>
+          </div>
+        </div>
       </div>
+
       <div
         className="services-section"
         id="services-section"
@@ -309,11 +333,10 @@ function App() {
         </div>
         <div id="quote-section"></div>
       </div>
-      
 
       <div className="quote-section" data-aos="fade-up">
         <h1 className="quote-title">Get Your Free Quote</h1>
-        <p className="quote-text">Call or Text Us At:</p>
+        <p className="quote-text">Call or Text Missy At:</p>
         <a href="tel:402-303-2541" className="quote-number">
           402-303-2541
         </a>

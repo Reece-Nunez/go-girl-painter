@@ -44,9 +44,9 @@ body {
   font-weight: 500;
 }
 
-a:hover {
+.nav-item:hover {
   background-color: #e68996;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .links {
@@ -60,16 +60,81 @@ a:hover {
   height: 80px;
   width: auto;
   margin-left: 10em;
+  margin: 0;
+  transition: transform 0.3s ease-in-out;
+}
+
+.logo-link:hover .App-logo {
+  transform: scale(1.2); /* Increase size by 20% */
 }
 
 .hero-section {
   display: flex;
-  flex-direction: column;
   height: 80vh;
-  background: linear-gradient(to bottom right,#e68996, #FCE4EC);
+  background: url('/public/images/lisa-house.JPG') no-repeat center/cover;
   color: white;
+  padding: 20px;
+  position: relative;
+  background-blend-mode: overlay;
   animation: fadeIn 1.5s ease-in-out;
 }
+
+.hero-content {
+  display: flex;
+  align-items: center;
+}
+
+.hero-text {
+  flex: 1;
+  z-index: 2;
+}
+
+.title {
+  font-size: 48px;
+}
+
+.brush-button {
+  margin-top: 20px;
+}
+
+.hero-image-container {
+  flex: 1;
+  text-align: center;
+  z-index: 2;
+}
+
+.hero-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  margin-bottom: 10px;
+}
+
+.customer-review {
+  background-color: rgba(255, 255, 255, 0.7);
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  color: #333;
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+}
+
+.review-text {
+  font-size: 14px;
+  font-style: italic;
+  margin-bottom: 5px;
+}
+
+.review-name {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: right;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -88,8 +153,8 @@ a:hover {
 }
 
 .title-paragraph {
-  margin-top: 300px;
-  font-size: 18px;
+  font-size: 24px;
+  font-weight: 700;
 }
 
 .title {
@@ -444,24 +509,9 @@ a:hover {
     display: none !important;
   }
 
-  .App-logo {
-    margin: 0;
-  }
-
   .hero-section {
     padding: 1rem;
     height: 400px;
-  }
-
-  .title {
-    font-size: 2rem;
-    margin: 0;
-  }
-
-  .title-paragraph {
-    font-size: 1rem;
-    margin-left: 0;
-    margin-top: 10em;
   }
 
   .brush-button {
