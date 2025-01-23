@@ -193,7 +193,7 @@ function App() {
     "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/residential25.jpg",
     "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/residential26.jpg",
     "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/residential27.jpg",
-    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/residential28.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/residential28.png",
     "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/residential29.jpg",
     "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/residential30.jpg",
   ];
