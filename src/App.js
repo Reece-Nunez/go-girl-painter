@@ -248,8 +248,6 @@ function App() {
       <div className="hero-section" data-aos="fade-up">
         <div className="hero-content">
           <div className="hero-text">
-            <p className="title-paragraph">Commercial & Residential</p>
-            <h1 className="title">Painting Services</h1>
             <button
               className="brush-button"
               onClick={() =>

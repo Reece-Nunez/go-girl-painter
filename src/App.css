@@ -70,8 +70,12 @@ body {
 
 .hero-section {
   display: flex;
+  flex-direction: row;
   height: 80vh;
-  background: url('/public/images/lisa-house.JPG') no-repeat center/cover;
+  background: 
+    url('/public/images/lisa-house.jpg') no-repeat right center/cover,
+    url('/public/images/commercial-header.jpg') no-repeat left center/cover;
+  background-size: 50% 100%, 50% 100%; /* Split the section into two halves */
   color: white;
   padding: 20px;
   position: relative;
@@ -81,34 +85,16 @@ body {
 
 .hero-content {
   display: flex;
-  align-items: center;
-}
-
-.hero-text {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
   flex: 1;
   z-index: 2;
 }
 
 .title {
   font-size: 48px;
-}
-
-.brush-button {
-  margin-top: 20px;
-}
-
-.hero-image-container {
-  flex: 1;
-  text-align: center;
-  z-index: 2;
-}
-
-.hero-image {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .customer-review {
@@ -162,10 +148,9 @@ body {
 }
 
 .brush-button {
-  display: inline-block;
-  position: relative;
+  position: absolute;
   padding: 10px 20px;
-  font-size: 16px;
+  font-size: 32px;
   color: white;
   text-decoration: none;
   letter-spacing: 1px;
@@ -176,7 +161,7 @@ body {
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   width: 12em;
-  
+  bottom: 100px;
 }
 
 .brush-button:hover {
@@ -356,7 +341,7 @@ body {
   background: linear-gradient(135deg, #ffffff, #f8d4d9);
   border-radius: 10px;
   text-align: center;
-  margin: 4rem 0;
+  margin: 4rem 0 0 0;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -483,22 +468,34 @@ body {
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
   html {
-    max-width: 900px;
+    max-width: 100%;
   }
   body {
-    max-width: 900px !important;
+    max-width: 100%;
   }
 
   .nav-bar {
     display: inline-flex;
+    justify-content: flex-start;
+    height: 50px;
     margin: 0;
+  }
+
+  .App-logo {
+    height: 50px;
+    width: auto;
+  }
+  .logo-link {
+    padding: 0;
   }
 
   .links {
     display: inline-flex;
+    margin: 0;
     flex-direction: row;
     gap: 10px;
     font-size: 12px;
+    padding: 0;
   }
 
   .slick-prev, .slick-next {
@@ -509,13 +506,34 @@ body {
     display: none !important;
   }
 
+
   .hero-section {
-    padding: 1rem;
-    height: 400px;
+    height: 300px;
+    width: auto;
+    background: url('/public/images/commercial-header.jpg') no-repeat center/cover;
+  }
+
+  .customer-review {
+    display: none; /* Hide the review in mobile */
+  }
+
+  .hero-content {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .title {
+    font-size: 24px;
   }
 
   .brush-button {
     margin: 0;
+    font-size: 12px;
+  }
+
+  .slick-track {
+    width: 400px;
+    height: 500px;
   }
 
   .services-title,
@@ -539,9 +557,18 @@ body {
   .gallery-image {
     height: auto;
   }
+  
+  .gallery-section {
+    padding: 0;
+  }
 
   .quote-title {
     font-size: 1.2rem;
+  }
+
+  .quote-section {
+    padding: 0;
+    margin: 0;
   }
 
   .quote-number {
