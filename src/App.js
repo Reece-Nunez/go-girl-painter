@@ -142,27 +142,17 @@ function App() {
     "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/commercial7.jpg",
     "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/commercial8.jpg",
     "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/commercial9.jpg",
-    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/commercial10.jpg",
-    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/commercial11.jpg",
     "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/commercial12.jpg",
     "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/commercial13.jpg",
-    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/commercial14.jpg",
-    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/commercial15.jpg",
-    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/commercial16.jpg",
     "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/commercial17.jpg",
     "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/commercial18.jpg",
     "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/commercial19.jpg",
     "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/commercial20.jpg",
     "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/commercial21.jpg",
-    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/commercial22.jpg",
-    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/commercial23.jpg",
     "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/commercial24.jpg",
-    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/commercial25.jpg",
     "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/commercial26.jpg",
-    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/commercial27.jpg",
-    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/commercial28.jpg",
     "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/commercial29.jpg",
-    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/commercial30.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/commercial31.jpg",
   ];
 
   const resedentialImages = [
@@ -189,13 +179,13 @@ function App() {
     "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/residential21.jpg",
     "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/residential22.jpg",
     "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/residential23.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/residential30.jpg",
     "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/residential24.jpg",
     "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/residential25.jpg",
     "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/residential26.jpg",
     "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/residential27.jpg",
     "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/residential28.png",
     "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/residential29.jpg",
-    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/residential30.jpg",
     "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/residential31.jpg",
     "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/residential32.jpg",
     "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/residential33.jpg",
@@ -317,6 +307,16 @@ function App() {
             ))}
           </Slider>
         </div>
+        <div id="quote-section"></div>
+      </div>
+      
+
+      <div className="quote-section" data-aos="fade-up">
+        <h1 className="quote-title">Get Your Free Quote</h1>
+        <p className="quote-text">Call or Text Us At:</p>
+        <a href="tel:402-303-2541" className="quote-number">
+          402-303-2541
+        </a>
       </div>
 
       <section className="reviews-section">
@@ -335,13 +335,6 @@ function App() {
           <p className="review-note">*Reviews from Facebook</p>
         </div>
       </section>
-      <div className="quote-section" id="quote-section" data-aos="fade-up">
-        <h1 className="quote-title">Get Your Free Quote</h1>
-        <p className="quote-text">Call or Text Us At:</p>
-        <a href="tel:402-303-2541" className="quote-number">
-          402-303-2541
-        </a>
-      </div>
 
       <div className="partners-section" data-aos="fade-in">
         <h1 className="partners-title">Our Trusted Partners</h1>
