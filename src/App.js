@@ -156,6 +156,10 @@ function App() {
     "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/com-stairs.jpg",
     "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/com-stairs2.jpg",
     "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/com-ceiling.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/com-hallway.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/school.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/trophy-case.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/trophy-case2.jpg",
   ];
 
   const resedentialImages = [
