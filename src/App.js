@@ -202,13 +202,15 @@ function App() {
     "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/cabinet5.jpg",
   ];
 
-  const settings = {
+  const sliderSettings = {
     dots: true, // Enable navigation dots
     infinite: true, // Infinite loop
-    speed: 500, // Transition speed
-    slidesToShow: 3, // Show 3 images at a time (center + 2 sides)
-    slidesToScroll: 1, // Scroll one image at a time
-    centerMode: true, // Center focus mode
+    speed: 300, // Transition speed
+    slidesToShow: 3, // Show one slide at a time
+    slidesToScroll: 1, // Scroll one slide at a time
+    autoplay: true, // Enable autoplay
+    autoplaySpeed: 3000, // Change slides every 3 seconds
+    centerMode: true, // Optional: Center focus
     centerPadding: "0", // No padding around the center slide
     responsive: [
       {
@@ -219,6 +221,7 @@ function App() {
       },
     ],
   };
+  
 
   return (
     <div className="App">
@@ -304,7 +307,7 @@ function App() {
       <div className="gallery-section" id="gallery-section" data-aos="fade-out">
         <h1 className="gallery-title">Commercial Work</h1>
         <div className="carousel-container">
-          <Slider {...settings}>
+          <Slider {...sliderSettings}>
             {commercialImages.map((pic, index) => (
               <div key={index} className="slide">
                 <img
@@ -324,7 +327,7 @@ function App() {
       >
         <h1 className="gallery-title">Residential Work</h1>
         <div className="carousel-container">
-          <Slider {...settings}>
+          <Slider {...sliderSettings}>
             {resedentialImages.map((pic, index) => (
               <div key={index} className="slide">
                 <img
@@ -350,7 +353,7 @@ function App() {
       <section className="reviews-section">
         <div className="reviews">
           <h3 id="reviews">Customer Reviews:</h3>
-          <Slider {...settings} className="review-slider">
+          <Slider {...sliderSettings} className="review-slider">
             {reviews.map((review, index) => (
               <div key={index} className="review">
                 <p className="review-text">"{review.text}"</p>
