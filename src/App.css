@@ -88,11 +88,11 @@ body {
 }
 
 #hero-image-left {
-  background: url('/public/images/commercial-header.jpg') no-repeat center/cover;
+  background: url('./assets/images/commercial-header.jpg') no-repeat center/cover;
 }
 
 #hero-image-right {
- background: url('/public/images/lisa-house.jpg') no-repeat center/cover;
+  background: url('./assets/images/lisa-house.jpg') no-repeat center/cover;
 }
 
 .hero-image:hover {
@@ -108,7 +108,7 @@ body {
 .brush-button {
   margin-top: 20px;
   padding: 10px 20px;
-  font-size: 16px;
+  font-size: 20px;
   color: white;
   text-decoration: none;
   letter-spacing: 1px;
