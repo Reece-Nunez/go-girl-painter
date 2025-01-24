@@ -153,6 +153,9 @@ function App() {
     "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/commercial26.jpg",
     "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/commercial29.jpg",
     "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/commercial31.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/com-stairs.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/com-stairs2.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/com-ceiling.jpg",
   ];
 
   const resedentialImages = [
@@ -200,6 +203,10 @@ function App() {
     "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/cabinet3.jpg",
     "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/cabinet4.jpg",
     "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/cabinet5.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/res-room.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/res-closet.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/res-brown-house.jpg",
+    
   ];
 
   const sliderSettings = {
