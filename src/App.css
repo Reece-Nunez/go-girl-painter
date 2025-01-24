@@ -528,6 +528,10 @@ body {
     font-size: 1rem;
   }
 
+  .reviews-section {
+    height: 300px;
+  }
+
   .footer {
     padding: 0.5rem;
     font-size: 0.9rem;
