@@ -224,7 +224,7 @@ function App() {
     <div className="App">
       <header className={`nav-bar ${isShrunk ? "shrink" : ""}`}>
         <a
-          href="#"
+          href="#top"
           className="logo-link"
           onClick={(e) => {
             e.preventDefault();
@@ -245,9 +245,11 @@ function App() {
           </li>
         </ul>
       </header>
-      <div className="hero-section" data-aos="fade-up">
-        <div className="hero-content">
+
+      <div className="hero-section">
+        <div className="hero-image" id="hero-image-left">
           <div className="hero-text">
+            <h1>Commercial Painting Services</h1>
             <button
               className="brush-button"
               onClick={() =>
@@ -259,15 +261,20 @@ function App() {
               Get A Quote
             </button>
           </div>
-          <div className="hero-image-container">
-            <div className="customer-review">
-              <p className="review-text">
-                "Just hired Missy at Go-Girl Paintings LLC for my home (exterior
-                paint). She did a fantastic job!! My home looks amazing!! Thank
-                you Missy!! 😍"
-              </p>
-              <p className="review-name">- Lisa Nunez</p>
-            </div>
+        </div>
+        <div className="hero-image" id="hero-image-right">
+          <div className="hero-text">
+            <h1>Residential Painting Services</h1>
+            <button
+              className="brush-button"
+              onClick={() =>
+                document
+                  .getElementById("quote-section")
+                  .scrollIntoView({ behavior: "smooth" })
+              }
+            >
+              Get A Quote
+            </button>
           </div>
         </div>
       </div>
@@ -342,7 +349,7 @@ function App() {
 
       <section className="reviews-section">
         <div className="reviews">
-          <h3>Customer Reviews:</h3>
+          <h3 id="reviews">Customer Reviews:</h3>
           <Slider {...settings} className="review-slider">
             {reviews.map((review, index) => (
               <div key={index} className="review">
