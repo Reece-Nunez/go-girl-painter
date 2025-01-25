@@ -14,6 +14,7 @@ import { faSquare } from "@fortawesome/free-solid-svg-icons";
 import { faBuilding } from "@fortawesome/free-solid-svg-icons";
 import { faPaintRoller } from "@fortawesome/free-solid-svg-icons";
 import { useEffect } from "react";
+import createdLogo from "./assets/images/reece-nunez-high-resolution-logo-transparent.svg";
 import AOS from "aos";
 
 function App() {
@@ -210,7 +211,7 @@ function App() {
     "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/res-room.jpg",
     "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/res-closet.jpg",
     "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/brown-house.jpg",
-    
+
   ];
 
   const sliderSettings = {
@@ -232,7 +233,7 @@ function App() {
       },
     ],
   };
-  
+
 
   return (
     <div className="App">
@@ -396,22 +397,32 @@ function App() {
       </div>
       <div className="footer">
         <div className="footer-content">
-          <p className="footer-text">
-            © 2025 Go-Girl Painting LLC. All rights reserved.
-          </p>
-          <a
-            href="https://www.facebook.com/profile.php?id=100083751551269"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="footer-link"
-          >
-            <img
-              src={process.env.PUBLIC_URL + "/images/facebook-icon.png"}
-              alt="Facebook"
-              className="footer-icon"
-            />
-            Visit us on Facebook
-          </a>
+          <div className="center-content">
+            <p className="footer-text">
+              © 2025 Go-Girl Painting LLC. All rights reserved.
+            </p>
+            <a
+              href="https://www.facebook.com/profile.php?id=100083751551269"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-link"
+            >
+              <img
+                src={process.env.PUBLIC_URL + "/images/facebook-icon.png"}
+                alt="Facebook"
+                className="footer-icon"
+              />
+              Visit us on Facebook
+            </a>
+          </div>
+          <div className="created-by">
+            <p>Created by:</p>
+            <div className="created-by-logo">
+              <a href="https://www.nunezdev.com" target="_blank" rel="noopener noreferrer">
+                <img src={createdLogo} className="createdLogo" alt="website creator logo" />
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>

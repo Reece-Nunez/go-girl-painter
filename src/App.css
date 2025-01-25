@@ -372,7 +372,6 @@ body {
   padding: 1.5rem 1rem;
   background-color: #e68996;
   color: white;
-  text-align: center;
   border-radius: 10px 10px 0 0;
   margin-top: 2rem;
   box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
@@ -380,14 +379,21 @@ body {
 
 .footer-content {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
+  justify-content: center; /* Center all items horizontally */
+  align-items: center; /* Align items vertically */
+  position: relative; /* Relative positioning for alignment */
+}
+
+.center-content {
+  display: flex;
+  flex-direction: column; /* Stack the copyright and Facebook link */
+  align-items: center; /* Center-align the content */
+  text-align: center;
 }
 
 .footer-text {
   font-size: 1rem;
-  margin: 0;
+  margin: 0 0 0.5rem 0; /* Add spacing below the text */
 }
 
 .footer-link {
@@ -410,6 +416,31 @@ body {
   height: 25px;
   margin-right: 0.5rem;
 }
+
+.created-by {
+  position: absolute; /* Place on the right-hand side */
+  right: 1rem; /* Adjust distance from the right edge */
+  text-align: right;
+}
+
+.created-by p {
+  margin: 0;
+}
+
+.createdLogo {
+  height: 50px;
+  width: 50px;
+}
+
+.created-by-logo:hover {
+  transform: scale(1.3);
+}
+
+.created-by-logo {
+  display: flex;
+  justify-content: center;
+}
+
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
