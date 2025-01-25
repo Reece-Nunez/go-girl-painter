@@ -217,7 +217,7 @@ function App() {
   const sliderSettings = {
     dots: true, // Enable navigation dots
     infinite: true, // Infinite loop
-    speed: 500, // Transition speed
+    speed: 900, // Transition speed
     slidesToShow: 3, // Show one slide at a time
     slidesToScroll: 1, // Scroll one slide at a time
     autoplay: true, // Enable autoplay
