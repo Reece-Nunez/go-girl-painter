@@ -558,8 +558,22 @@ body {
   }
 
   .footer {
-    padding: 0.5rem;
-    font-size: 0.9rem;
+    padding: 1rem;
+    font-size: 10px;
+  }
+
+  .footer-content {
+    flex-direction: column; /* Switch layout to column */
+    align-items: center; /* Center items in the column */
+    text-align: center; /* Center all text */
+  }
+
+  .created-by {
+    position: static; /* Remove absolute positioning for stacking */
+    margin-top: 1rem; /* Add spacing above */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
   }
 }
 
