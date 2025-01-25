@@ -282,14 +282,6 @@ body {
   color: rgb(0, 0, 0) !important;
 }
 
-.slick-prev {
-  left: -300px !important;
-}
-
-.slick-next {
-  right: -120px !important;
-}
-
 .quote-section {
   padding: 2rem 1rem;
   background: linear-gradient(135deg, #ffffff, #f8d4d9);

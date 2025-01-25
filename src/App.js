@@ -389,7 +389,7 @@ function App() {
             />
           </a>
         </div>
-        <p className="partner-name">Micheal Hohlfeld</p>
+        <p className="partner-name">Michael Hohlfeld</p>
         <a href="tel:402-705-9513" className="quote-number">
           402-705-9513
         </a>
