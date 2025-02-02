@@ -237,7 +237,7 @@ function App() {
 
   return (
     <div className="App">
-      <header className={`nav-bar ${isShrunk ? "shrink" : ""}`}>
+      <header className={`nav-bar ${isShrunk ? "shrink" : ""}`} aria-label="Main Navigation">
         <a
           href="#top"
           className="logo-link"
@@ -246,185 +246,179 @@ function App() {
             window.scrollTo({ top: 0, behavior: "smooth" });
           }}
         >
-          <img src={logo} className="App-logo" alt="logo" />
+          <img src={logo} className="App-logo" alt="Go-Girl Painting logo" />
         </a>
-        <ul className="links">
-          <li className="nav-item">
-            <a href="/">Home</a>
-          </li>
-          <li className="nav-item">
-            <a href="#services-section">Services</a>
-          </li>
-          <li className="nav-item">
-            <a href="#gallery-section">Gallery</a>
-          </li>
-        </ul>
+        <nav>
+          <ul className="links">
+            <li className="nav-item"><a href="/">Home</a></li>
+            <li className="nav-item"><a href="#services-section">Services</a></li>
+            <li className="nav-item"><a href="#gallery-section">Gallery</a></li>
+          </ul>
+        </nav>
       </header>
 
-      <div className="hero-section">
-        <div className="hero-image" id="hero-image-left">
-          <div className="hero-text">
-            <h1>Commercial Painting Services</h1>
-            <button
-              className="brush-button"
-              onClick={() =>
-                document
-                  .getElementById("quote-section")
-                  .scrollIntoView({ behavior: "smooth" })
-              }
-            >
-              Get A Quote
-            </button>
-          </div>
-        </div>
-        <div className="hero-image" id="hero-image-right">
-          <div className="hero-text">
-            <h1>Residential Painting Services</h1>
-            <button
-              className="brush-button"
-              onClick={() =>
-                document
-                  .getElementById("quote-section")
-                  .scrollIntoView({ behavior: "smooth" })
-              }
-            >
-              Get A Quote
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <div
-        className="services-section"
-        id="services-section"
-        data-aos="fade-up"
-      >
-        <h1 className="services-title">Our Services</h1>
-        <ul className="services-list">
-          {services.map((service, index) => (
-            <li
-              key={index}
-              className="service-item"
-              onClick={() => toggleService(index)}
-            >
-              <div className="service-icon">{service.icon}</div>
-              <p className="service-name">{service.name}</p>
-              {activeService === index && (
-                <p className="service-description">{service.description}</p>
-              )}
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div className="gallery-section" id="gallery-section" data-aos="fade-out">
-        <h1 className="gallery-title">Commercial Work</h1>
-        <div className="carousel-container">
-          <Slider {...sliderSettings}>
-            {commercialImages.map((pic, index) => (
-              <div key={index} className="slide">
-                <img
-                  src={pic} // Use the full URL here
-                  alt={`Work ${index + 1}`}
-                  className="gallery-image"
-                />
-              </div>
-            ))}
-          </Slider>
-        </div>
-      </div>
-      <div
-        className="gallery-section"
-        id="gallery-section"
-        data-aos="fade-right"
-      >
-        <h1 className="gallery-title">Residential Work</h1>
-        <div className="carousel-container">
-          <Slider {...sliderSettings}>
-            {resedentialImages.map((pic, index) => (
-              <div key={index} className="slide">
-                <img
-                  src={pic} // Use the full URL here
-                  alt={`Work ${index + 1}`}
-                  className="gallery-image"
-                />
-              </div>
-            ))}
-          </Slider>
-        </div>
-        <div id="quote-section"></div>
-      </div>
-
-      <div className="quote-section" data-aos="fade-up">
-        <h1 className="quote-title">Get Your Free Quote</h1>
-        <p className="quote-text">Call or Text Missy At:</p>
-        <a href="tel:402-303-2541" className="quote-number">
-          402-303-2541
-        </a>
-      </div>
-
-      <section className="reviews-section">
-        <div className="reviews">
-          <h3 id="reviews">Customer Reviews:</h3>
-          <Slider {...sliderSettings} className="review-slider">
-            {reviews.map((review, index) => (
-              <div key={index} className="review">
-                <p className="review-text">"{review.text}"</p>
-                <p className="review-name">- {review.name}</p>
-                <p className="review-property">{review.property}</p>
-                <div className="review-stars">{renderStars(review.rating)}</div>
-              </div>
-            ))}
-          </Slider>
-          <p className="review-note">*Reviews from Facebook</p>
-        </div>
-      </section>
-
-      <div className="partners-section" data-aos="fade-in">
-        <h1 className="partners-title">Our Trusted Partners</h1>
-        <div className="partners-logos">
-          <a href="https://brand.page/profixandbuildllc">
-            <img
-              src={process.env.PUBLIC_URL + "/images/partner.png"}
-              alt="Partner Logo"
-              className="partner-logo"
-            />
-          </a>
-        </div>
-        <p className="partner-name">Michael Hohlfeld</p>
-        <a href="tel:402-705-9513" className="quote-number">
-          402-705-9513
-        </a>
-      </div>
-      <div className="footer">
-        <div className="footer-content">
-          <div className="center-content">
-            <p className="footer-text">
-              © 2025 Go-Girl Painting LLC. All rights reserved.
-            </p>
-            <a
-              href="https://www.facebook.com/profile.php?id=100083751551269"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="footer-link"
-            >
-              <img
-                src={process.env.PUBLIC_URL + "/images/facebook-icon.png"}
-                alt="Facebook"
-                className="footer-icon"
-              />
-              Visit us on Facebook
-            </a>
-          </div>
-          <div className="created-by">
-            <p>Created by:</p>
-            <div className="created-by-logo">
-              <a href="https://www.nunezdev.com" target="_blank" rel="noopener noreferrer">
-                <img src={createdLogo} className="createdLogo" alt="website creator logo" />
-              </a>
+      <main>
+        <section className="hero-section">
+          <div className="hero-image" id="hero-image-left" aria-label="Commercial painting services">
+            <div className="hero-text">
+              <h1>Commercial Painting Services</h1>
+              <button
+                className="brush-button"
+                onClick={() =>
+                  document
+                    .getElementById("quote-section")
+                    .scrollIntoView({ behavior: "smooth" })
+                }
+              >
+                Get A Quote
+              </button>
             </div>
           </div>
+          <div className="hero-image" id="hero-image-right" aria-label="Residential painting services">
+            <div className="hero-text">
+              <h1>Residential Painting Services</h1>
+              <button
+                className="brush-button"
+                onClick={() =>
+                  document
+                    .getElementById("quote-section")
+                    .scrollIntoView({ behavior: "smooth" })
+                }
+              >
+                Get A Quote
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <section
+          className="services-section"
+          id="services-section"
+          data-aos="fade-up"
+        >
+          <h1 className="services-title">Our Services</h1>
+          <ul className="services-list">
+            {services.map((service, index) => (
+              <li
+                key={index}
+                className="service-item"
+                onClick={() => toggleService(index)}
+                role="button"
+                tabIndex={0}
+                aria-expanded={activeService === index}
+              >
+                <div className="service-icon">{service.icon}</div>
+                <p className="service-name">{service.name}</p>
+                {activeService === index && (
+                  <p className="service-description">{service.description}</p>
+                )}
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section className="gallery-section" id="gallery-section" data-aos="fade-out">
+          <h1 className="gallery-title">Commercial Work</h1>
+          <div className="carousel-container">
+            <Slider {...sliderSettings}>
+              {commercialImages.map((pic, index) => (
+                <div key={index} className="slide">
+                  <img
+                    src={pic}
+                    alt={`Work ${index + 1}`}
+                    className="gallery-image"
+                  />
+                </div>
+              ))}
+            </Slider>
+          </div>
+        </section>
+
+        <section
+          className="gallery-section"
+          id="gallery-section"
+          data-aos="fade-right"
+        >
+          <h1 className="gallery-title">Residential Work</h1>
+          <div className="carousel-container">
+            <Slider {...sliderSettings}>
+              {resedentialImages.map((pic, index) => (
+                <div key={index} className="slide">
+                  <img
+                    src={pic} // Use the full URL here
+                    alt={`Work ${index + 1}`}
+                    className="gallery-image"
+                  />
+                </div>
+              ))}
+            </Slider>
+          </div>
+          <div id="quote-section"></div>
+        </section>
+
+        <section className="quote-section" data-aos="fade-up">
+          <h1 className="quote-title">Get Your Free Quote</h1>
+          <p className="quote-text">Call or Text Missy At:</p>
+          <a href="tel:402-303-2541" className="quote-number">
+            402-303-2541
+          </a>
+        </section>
+
+        <section className="reviews-section" aria-labelledby="reviews-title">
+          <div className="reviews">
+            <h3 id="reviews">Customer Reviews:</h3>
+            <Slider {...sliderSettings} className="review-slider">
+              {reviews.map((review, index) => (
+                <div key={index} className="review">
+                  <p className="review-text">"{review.text}"</p>
+                  <p className="review-name">- {review.name}</p>
+                  <p className="review-property">{review.property}</p>
+                  <div className="review-stars">{renderStars(review.rating)}</div>
+                </div>
+              ))}
+            </Slider>
+            <p className="review-note">*Reviews from Facebook</p>
+          </div>
+        </section>
+
+        <section className="partners-section" data-aos="fade-in">
+          <h1 className="partners-title">Our Trusted Partners</h1>
+          <div className="partners-logos">
+            <a href="https://brand.page/profixandbuildllc">
+              <img
+                src={process.env.PUBLIC_URL + "/images/partner.png"}
+                alt="Pro Fix and Build Partner Logo"
+                className="partner-logo"
+              />
+            </a>
+          </div>
+          <p className="partner-name">Michael Hohlfeld</p>
+          <a href="tel:402-705-9513" className="quote-number">
+            402-705-9513
+          </a>
+        </section>
+      </main>
+
+      <footer className="footer">
+        <div className="footer-content">
+          <p className="footer-text">© 2025 Go-Girl Painting LLC. All rights reserved.</p>
+          <a
+            href="https://www.facebook.com/profile.php?id=100083751551269"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer-link"
+          >
+            <img src="/images/facebook-icon.png" alt="Visit us on Facebook" className="footer-icon" />
+            Visit us on Facebook
+          </a>
+          <div className="created-by">
+            <p>Created by:</p>
+            <a href="https://www.nunezdev.com" target="_blank" rel="noopener noreferrer">
+              <img src={createdLogo} alt="Website Creator Logo" className="createdLogo" />
+            </a>
+          </div>
         </div>
-      </div>
+      </footer>
     </div>
   );
 }
