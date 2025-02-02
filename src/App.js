@@ -375,15 +375,18 @@ function App() {
           </a>
         </section>
 
-        <section id="reviews-section" className="reviews-section" data-aos="fade-up">
+        <section id="reviews-section" className="reviews-section" data-aos="fade-up" itemScope itemType="https://schema.org/Review">
           <div className="reviews">
-            <h3 id="reviews">Customer Reviews:</h3>
+            <h3 id="reviews" itemProp="name">Customer Reviews:</h3>
             <Slider {...sliderSettings} className="review-slider">
               {reviews.map((review, index) => (
-                <div key={index} className="review">
-                  <p className="review-text">"{review.text}"</p>
-                  <p className="review-name">- {review.name}</p>
+                <div key={index} className="review" itemScope itemType="https://schema.org/Review">
+                  <p className="review-text" itemProp="reviewBody">"{review.text}"</p>
+                  <p className="review-name" itemProp="author" itemScope itemType="https://schema.org/Person">
+                    - <span itemProp="name">{review.name}</span>
+                  </p>
                   <p className="review-property">{review.property}</p>
+                  <meta itemProp="reviewRating" content={review.rating.toString()} />
                   <div className="review-stars">{renderStars(review.rating)}</div>
                 </div>
               ))}
