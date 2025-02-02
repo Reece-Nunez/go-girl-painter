@@ -250,9 +250,18 @@ function App() {
         </a>
         <nav>
           <ul className="links">
-            <li className="nav-item"><a href="/">Home</a></li>
-            <li className="nav-item"><a href="#services-section">Services</a></li>
-            <li className="nav-item"><a href="#gallery-section">Gallery</a></li>
+            <li className="nav-item">
+              <a href="#services-section" aria-label="Jump to Services section">Services</a>
+            </li>
+            <li className="nav-item">
+              <a href="#gallery-section" aria-label="Jump to Gallery section">Gallery</a>
+            </li>
+            <li className="nav-item">
+              <a href="#quote-section" aria-label="Jump to Get a Quote section">Get a Quote</a>
+            </li>
+            <li className="nav-item">
+              <a href="#reviews-section" aria-label="Jump to Customer Reviews">Reviews</a>
+            </li>
           </ul>
         </nav>
       </header>
@@ -358,7 +367,7 @@ function App() {
           <div id="quote-section"></div>
         </section>
 
-        <section className="quote-section" data-aos="fade-up">
+        <section id="quote-section" className="quote-section" data-aos="fade-up">
           <h1 className="quote-title">Get Your Free Quote</h1>
           <p className="quote-text">Call or Text Missy At:</p>
           <a href="tel:402-303-2541" className="quote-number">
@@ -366,7 +375,7 @@ function App() {
           </a>
         </section>
 
-        <section className="reviews-section" aria-labelledby="reviews-title">
+        <section id="reviews-section" className="reviews-section" data-aos="fade-up">
           <div className="reviews">
             <h3 id="reviews">Customer Reviews:</h3>
             <Slider {...sliderSettings} className="review-slider">
@@ -404,6 +413,7 @@ function App() {
       <footer className="footer">
         <div className="footer-content">
           <p className="footer-text">© 2025 Go-Girl Painting LLC. All rights reserved.</p>
+          <a href="#top" className="back-to-top" aria-label="Back to top">Back to Top</a>
           <a
             href="https://www.facebook.com/profile.php?id=100083751551269"
             target="_blank"
