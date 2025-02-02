@@ -325,7 +325,8 @@ function App() {
                 <div key={index} className="slide">
                   <img
                     src={pic}
-                    alt={`Work ${index + 1}`}
+                    alt={`Commerical painting project ${index + 1}`}
+                    loading="lazy"
                     className="gallery-image"
                   />
                 </div>
@@ -346,7 +347,8 @@ function App() {
                 <div key={index} className="slide">
                   <img
                     src={pic} // Use the full URL here
-                    alt={`Work ${index + 1}`}
+                    alt={`Residential painting project ${index + 1}`}
+                    loading="lazy"
                     className="gallery-image"
                   />
                 </div>
