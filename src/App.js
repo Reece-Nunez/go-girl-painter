@@ -234,6 +234,16 @@ function App() {
     ],
   };
 
+  const handleGetQuoteClick = () => {
+    if (window.gtag) {
+      window.gtag('event', 'click', {
+        event_category: 'Button',
+        event_label: 'Get A Quote',
+      });
+    }
+    document.getElementById("quote-section").scrollIntoView({ behavior: "smooth" });
+  };
+
 
   return (
     <div className="App">
@@ -288,11 +298,7 @@ function App() {
               <h1>Residential Painting Services</h1>
               <button
                 className="brush-button"
-                onClick={() =>
-                  document
-                    .getElementById("quote-section")
-                    .scrollIntoView({ behavior: "smooth" })
-                }
+                onClick={handleGetQuoteClick}
               >
                 Get A Quote
               </button>
