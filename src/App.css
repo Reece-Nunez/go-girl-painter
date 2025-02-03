@@ -591,6 +591,10 @@ body {
     font-size: 1.8rem;
   }
 
+  #reviews {
+    text-align: center;
+  }
+
   .quote-section {
     padding: 50px;
     margin: 50px 10px;
