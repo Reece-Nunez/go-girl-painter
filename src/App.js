@@ -3,23 +3,27 @@ import "./App.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { useState } from "react";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { useState, useEffect } from "react";
+import { faBars, faHome, faCouch, faTree, faBrush, faSquare, faBuilding, faPaintRoller, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHome } from "@fortawesome/free-solid-svg-icons";
-import { faCouch } from "@fortawesome/free-solid-svg-icons";
-import { faTree } from "@fortawesome/free-solid-svg-icons";
-import { faBrush } from "@fortawesome/free-solid-svg-icons";
-import { faSquare } from "@fortawesome/free-solid-svg-icons";
-import { faBuilding } from "@fortawesome/free-solid-svg-icons";
-import { faPaintRoller } from "@fortawesome/free-solid-svg-icons";
-import { useEffect } from "react";
 import createdLogo from "./assets/images/reece-nunez-high-resolution-logo-transparent.svg";
 import AOS from "aos";
 
 function App() {
   const [activeService, setActiveService] = useState(null);
   const [isShrunk, setIsShrunk] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener('resize', handleResize);
+    handleResize();
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const toggleMenu = () => setMenuOpen(!menuOpen);
+
 
   useEffect(() => {
     AOS.init({
@@ -258,25 +262,39 @@ function App() {
         >
           <img src={logo} className="App-logo" alt="Go-Girl Painting logo" />
         </a>
-        <nav>
-          <ul className="links">
-            <li className="nav-item">
-              <a href="#services-section" aria-label="Jump to Services section">Services</a>
-            </li>
-            <li className="nav-item">
-              <a href="#gallery-section" aria-label="Jump to Gallery section">Gallery</a>
-            </li>
-            <li className="nav-item">
-              <a href="#quote-section" aria-label="Jump to Get a Quote section">Get a Quote</a>
-            </li>
-            <li className="nav-item">
-              <a href="#reviews-section" aria-label="Jump to Customer Reviews">Reviews</a>
-            </li>
-          </ul>
-        </nav>
+        {isMobile ? (
+          <div className="hamburger-menu">
+            <button className={`hamburger-button ${menuOpen ? 'open' : ''}`} onClick={toggleMenu}>
+              <FontAwesomeIcon icon={menuOpen ? faTimes : faBars} />
+            </button>
+            <div className={`mobile-nav ${menuOpen ? 'show' : ''}`}>
+              <a href="#services-section">Services</a>
+              <a href="#gallery-section">Gallery</a>
+              <a href="#quote-section">Get a Quote</a>
+              <a href="#reviews-section">Reviews</a>
+            </div>
+          </div>
+        ) : (
+          <nav>
+            <ul className="links">
+              <li className="nav-item">
+                <a href="#services-section" aria-label="Jump to Services section">Services</a>
+              </li>
+              <li className="nav-item">
+                <a href="#gallery-section" aria-label="Jump to Gallery section">Gallery</a>
+              </li>
+              <li className="nav-item">
+                <a href="#quote-section" aria-label="Jump to Get a Quote section">Get a Quote</a>
+              </li>
+              <li className="nav-item">
+                <a href="#reviews-section" aria-label="Jump to Customer Reviews">Reviews</a>
+              </li>
+            </ul>
+          </nav>
+        )}
       </header>
 
-      <main>
+      <main id='page-wrap'>
         <section className="hero-section">
           <div className="hero-image" id="hero-image-left" aria-label="Commercial painting services">
             <div className="hero-text">
