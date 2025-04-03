@@ -134,7 +134,7 @@ function App() {
   };
 
   const commercialImages = [
-    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/commercial1.jpg",
+    "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/commercial1.png",
     "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/commercial2.jpg",
     "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/commercial3.jpg",
     "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/commercial4.jpg",
