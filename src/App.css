@@ -22,6 +22,57 @@ body {
   transition: all 0.3s ease;
 }
 
+.hamburger-menu {
+  margin-right: 80px;
+}
+
+.hamburger-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: black;
+  padding: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.hamburger-button.open {
+  transform: rotate(90deg);
+}
+
+.mobile-nav {
+  position: absolute;
+  top: 60px;
+  right: 40px;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  display: none;
+  flex-direction: column;
+  padding: 10px;
+  z-index: 1000;
+  margin-right: 20px;
+}
+
+.mobile-nav.show {
+  display: flex;
+}
+
+.mobile-nav a {
+  padding: 10px;
+  color: black;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.mobile-nav a:hover {
+  background-color: #e68996;
+  color: white;
+  border-radius: 5px;
+}
+
 .nav-bar.shrink {
   background-color: rgba(255, 255, 255, 0.3); /* Transparent background */
 }
@@ -468,10 +519,14 @@ body {
   body {
     max-width: 100%;
   }
+  
+  .desktop-nav {
+    display: none;
+  }
 
   .nav-bar {
     display: inline-flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     height: 50px;
     margin: 0;
   }
