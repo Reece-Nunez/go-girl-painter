@@ -1,34 +1,56 @@
 import logo from "./logo.png";
+import { Helmet } from "react-helmet";
 import "./App.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useState, useEffect } from "react";
-import { faBars, faHome, faCouch, faTree, faBrush, faSquare, faBuilding, faPaintRoller, faTimes } from "@fortawesome/free-solid-svg-icons";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faBuilding,
+  faHome,
+  faPaintRoller,
+  faCouch,
+  faSquare,
+  faTree,
+  faBrush,
+  faBars,
+  faTimes,
+} from "@fortawesome/free-solid-svg-icons";
 import createdLogo from "./assets/images/reece-nunez-high-resolution-logo-transparent.svg";
 import AOS from "aos";
+import "aos/dist/aos.css";
 
 function App() {
   const [activeService, setActiveService] = useState(null);
   const [isShrunk, setIsShrunk] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [showScroll, setShowScroll] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setShowScroll(window.scrollY > 100);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth <= 768);
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
     handleResize();
-    return () => window.removeEventListener('resize', handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
-
   useEffect(() => {
     AOS.init({
-      duration: 1500, // Animation duration in ms
-      once: true, // Only animate once per element
+      duration: 1000, // Slightly faster for snappier feel
+      easing: "ease-in-out", // Smooth natural motion
+      once: true, // Animate only once
+      mirror: false, // No reverse animation
+      offset: 100, // Trigger a bit earlier
     });
   }, []);
 
@@ -215,7 +237,6 @@ function App() {
     "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/res-room.jpg",
     "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/res-closet.jpg",
     "https://go-girl-images-bucket.s3.us-east-1.amazonaws.com/images/brown-house.jpg",
-
   ];
 
   const sliderSettings = {
@@ -240,18 +261,55 @@ function App() {
 
   const handleGetQuoteClick = () => {
     if (window.gtag) {
-      window.gtag('event', 'click', {
-        event_category: 'Button',
-        event_label: 'Get A Quote',
+      window.gtag("event", "click", {
+        event_category: "Button",
+        event_label: "Get A Quote",
       });
     }
-    document.getElementById("quote-section").scrollIntoView({ behavior: "smooth" });
+    document
+      .getElementById("quote-section")
+      .scrollIntoView({ behavior: "smooth" });
   };
-
 
   return (
     <div className="App">
-      <header className={`nav-bar ${isShrunk ? "shrink" : ""}`} aria-label="Main Navigation">
+      {/* Helmet for SEO */}
+      <Helmet>
+        <title>Go-Girl Painting | Omaha's Best Commercial & Residential Painters</title>
+        <meta 
+          name="description" 
+          content="Professional interior and exterior painting services in Omaha, NE. Get your free quote today from Go-Girl Painting!" 
+        />
+        <meta 
+          name="keywords" 
+          content="Omaha painting services, commercial painting, residential painting, interior painting, exterior painting, Go-Girl Painting"
+        />
+        <link rel="canonical" href="https://go-girlpainting.com/" />
+
+        {/* Open Graph Tags */}
+        <meta property="og:title" content="Go-Girl Painting | Expert Painting Services in Omaha, NE" />
+        <meta property="og:description" content="Transform your home or business with top-rated painting services." />
+        <meta property="og:image" content="https://go-girlpainting.com/assets/images/commercial-header.jpg" />
+        <meta property="og:url" content="https://go-girlpainting.com" />
+        <meta property="og:type" content="website" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Omaha's Trusted Painting Experts | Go-Girl Painting" />
+        <meta name="twitter:description" content="Contact us today for professional painting services." />
+        <meta name="twitter:image" content="https://go-girlpainting.com/assets/images/commercial-header.jpg" />
+      </Helmet>
+      
+      {/* Sticky CTA for Mobile */}
+      {isMobile && (
+        <a href="#quote-section" className="sticky-cta">
+          Get A Quote
+        </a>
+      )}
+      <header
+        className={`nav-bar ${isShrunk ? "shrink" : ""}`}
+        aria-label="Main Navigation"
+      >
         <a
           href="#top"
           className="logo-link"
@@ -264,10 +322,13 @@ function App() {
         </a>
         {isMobile ? (
           <div className="hamburger-menu">
-            <button className={`hamburger-button ${menuOpen ? 'open' : ''}`} onClick={toggleMenu}>
+            <button
+              className={`hamburger-button ${menuOpen ? "open" : ""}`}
+              onClick={toggleMenu}
+            >
               <FontAwesomeIcon icon={menuOpen ? faTimes : faBars} />
             </button>
-            <div className={`mobile-nav ${menuOpen ? 'show' : ''}`}>
+            <div className={`mobile-nav ${menuOpen ? "show" : ""}`}>
               <a href="#services-section">Services</a>
               <a href="#gallery-section">Gallery</a>
               <a href="#quote-section">Get a Quote</a>
@@ -278,48 +339,80 @@ function App() {
           <nav>
             <ul className="links">
               <li className="nav-item">
-                <a href="#services-section" aria-label="Jump to Services section">Services</a>
+                <a
+                  href="#services-section"
+                  aria-label="Jump to Services section"
+                >
+                  Services
+                </a>
               </li>
               <li className="nav-item">
-                <a href="#gallery-section" aria-label="Jump to Gallery section">Gallery</a>
+                <a href="#gallery-section" aria-label="Jump to Gallery section">
+                  Gallery
+                </a>
               </li>
               <li className="nav-item">
-                <a href="#quote-section" aria-label="Jump to Get a Quote section">Get a Quote</a>
+                <a
+                  href="#quote-section"
+                  aria-label="Jump to Get a Quote section"
+                >
+                  Get a Quote
+                </a>
               </li>
               <li className="nav-item">
-                <a href="#reviews-section" aria-label="Jump to Customer Reviews">Reviews</a>
+                <a
+                  href="#reviews-section"
+                  aria-label="Jump to Customer Reviews"
+                >
+                  Reviews
+                </a>
               </li>
             </ul>
           </nav>
         )}
       </header>
 
-      <main id='page-wrap'>
-        <section className="hero-section">
-          <div className="hero-image" id="hero-image-left" aria-label="Commercial painting services">
-            <div className="hero-text">
-              <h1>Commercial Painting Services</h1>
-              <button
-                className="brush-button"
-                onClick={() =>
-                  document
-                    .getElementById("quote-section")
-                    .scrollIntoView({ behavior: "smooth" })
-                }
-              >
-                Get A Quote
-              </button>
+      <main id="page-wrap">
+        <section
+          className="hero-section"
+          data-aos="fade-zoom-in"
+          data-aos-easing="ease-out-cubic"
+          data-aos-duration="1200"
+        >
+          <h1 className="hero-title">Welcome to Go Girl Painting!</h1>
+
+          <div className="hero-images-wrapper">
+            <div
+              className="hero-image"
+              id="hero-image-left"
+              aria-label="Commercial painting services"
+            >
+              <div className="hero-text">
+                <h2>Commercial Painting Services</h2>
+                <button
+                  className="brush-button"
+                  onClick={() =>
+                    document
+                      .getElementById("quote-section")
+                      .scrollIntoView({ behavior: "smooth" })
+                  }
+                >
+                  Get A Quote
+                </button>
+              </div>
             </div>
-          </div>
-          <div className="hero-image" id="hero-image-right" aria-label="Residential painting services">
-            <div className="hero-text">
-              <h1>Residential Painting Services</h1>
-              <button
-                className="brush-button"
-                onClick={handleGetQuoteClick}
-              >
-                Get A Quote
-              </button>
+
+            <div
+              className="hero-image"
+              id="hero-image-right"
+              aria-label="Residential painting services"
+            >
+              <div className="hero-text">
+                <h2>Residential Painting Services</h2>
+                <button className="brush-button" onClick={handleGetQuoteClick}>
+                  Get A Quote
+                </button>
+              </div>
             </div>
           </div>
         </section>
@@ -329,16 +422,20 @@ function App() {
           id="services-section"
           data-aos="fade-up"
         >
-          <h1 className="services-title">Our Services</h1>
+          <h2 className="services-title">Our Services</h2>
+
           <ul className="services-list">
             {services.map((service, index) => (
               <li
                 key={index}
-                className="service-item"
+                class="service-item"
                 onClick={() => toggleService(index)}
                 role="button"
                 tabIndex={0}
                 aria-expanded={activeService === index}
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
+                data-aos-once="true"
               >
                 <div className="service-icon">{service.icon}</div>
                 <p className="service-name">{service.name}</p>
@@ -350,8 +447,12 @@ function App() {
           </ul>
         </section>
 
-        <section className="gallery-section" id="gallery-section" data-aos="fade-out">
-          <h1 className="gallery-title">Commercial Work</h1>
+        <section
+          className="gallery-section"
+          id="commercial-gallery"
+          data-aos="fade-right"
+        >
+          <h2 className="gallery-title">Commercial Work</h2>
           <div className="carousel-container">
             <Slider {...sliderSettings}>
               {commercialImages.map((pic, index) => (
@@ -370,10 +471,10 @@ function App() {
 
         <section
           className="gallery-section"
-          id="gallery-section"
-          data-aos="fade-right"
+          id="residential-gallery"
+          data-aos="fade-left"
         >
-          <h1 className="gallery-title">Residential Work</h1>
+          <h2 className="gallery-title">Residential Work</h2>
           <div className="carousel-container">
             <Slider {...sliderSettings}>
               {resedentialImages.map((pic, index) => (
@@ -391,27 +492,71 @@ function App() {
           <div id="quote-section"></div>
         </section>
 
-        <section id="quote-section" className="quote-section" data-aos="fade-up">
-          <h1 className="quote-title">Get Your Free Quote</h1>
-          <p className="quote-text">Call or Text Missy At:</p>
-          <a href="tel:402-303-2541" className="quote-number">
-            402-303-2541
-          </a>
+        <section
+          id="quote-section"
+          className="quote-section"
+          data-aos="zoom-in-up"
+        >
+          <h2 className="quote-title">Get Your Free Quote</h2>
+          <p className="quote-text">Email, Call, or Text Missy At:</p>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              gap: "10px",
+              alignItems: "center",
+            }}
+          >
+            <a href="tel:402-303-2541" className="quote-number">
+              Phone: 402-303-2541
+            </a>
+            <a
+              href="mailto:go-girlpainting@outlook.com"
+              className="quote-number"
+            >
+              Email: go-girlpainting@outlook.com
+            </a>
+          </div>
         </section>
 
-        <section id="reviews-section" className="reviews-section" data-aos="fade-up" itemScope itemType="https://schema.org/Review">
+        <section
+          id="reviews-section"
+          className="reviews-section"
+          data-aos="fade-up"
+          itemScope
+          itemType="https://schema.org/Review"
+        >
           <div className="reviews">
-            <h3 id="reviews" itemProp="name">Customer Reviews:</h3>
+            <h3 id="reviews" itemProp="name">
+              Customer Reviews:
+            </h3>
             <Slider {...sliderSettings} className="review-slider">
               {reviews.map((review, index) => (
-                <div key={index} className="review" itemScope itemType="https://schema.org/Review">
-                  <p className="review-text" itemProp="reviewBody">"{review.text}"</p>
-                  <p className="review-name" itemProp="author" itemScope itemType="https://schema.org/Person">
+                <div
+                  key={index}
+                  className="review"
+                  itemScope
+                  itemType="https://schema.org/Review"
+                >
+                  <p className="review-text" itemProp="reviewBody">
+                    "{review.text}"
+                  </p>
+                  <p
+                    className="review-name"
+                    itemProp="author"
+                    itemScope
+                    itemType="https://schema.org/Person"
+                  >
                     - <span itemProp="name">{review.name}</span>
                   </p>
                   <p className="review-property">{review.property}</p>
-                  <meta itemProp="reviewRating" content={review.rating.toString()} />
-                  <div className="review-stars">{renderStars(review.rating)}</div>
+                  <meta
+                    itemProp="reviewRating"
+                    content={review.rating.toString()}
+                  />
+                  <div className="review-stars">
+                    {renderStars(review.rating)}
+                  </div>
                 </div>
               ))}
             </Slider>
@@ -419,8 +564,8 @@ function App() {
           </div>
         </section>
 
-        <section className="partners-section" data-aos="fade-in">
-          <h1 className="partners-title">Our Trusted Partners</h1>
+        <section className="partners-section" data-aos="flip-left">
+          <h2 className="partners-title">Our Trusted Partners</h2>
           <div className="partners-logos">
             <a href="https://brand.page/profixandbuildllc">
               <img
@@ -437,23 +582,62 @@ function App() {
         </section>
       </main>
 
-      <footer className="footer">
+      {showScroll && (
+        <button
+          className="scroll-to-top"
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        >
+          ↑
+          <br />
+          <div className="top">Top</div>
+        </button>
+      )}
+
+      <footer className="footer" data-aos="fade-down" data-aos-delay="200">
         <div className="footer-content">
-          <p className="footer-text">© 2025 Go-Girl Painting LLC. All rights reserved.</p>
-          <a href="#top" className="back-to-top" aria-label="Back to top">Back to Top</a>
-          <a
-            href="https://www.facebook.com/profile.php?id=100083751551269"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="footer-link"
-          >
-            <img src="/images/facebook-icon.png" alt="Visit us on Facebook" className="footer-icon" />
-            Visit us on Facebook
-          </a>
+          <nav className="footer-links">
+            <a href="#services-section">Services</a>
+            <a href="#gallery-section">Gallery</a>
+            <a href="#quote-section">Get a Quote</a>
+            <a href="#reviews-section">Reviews</a>
+          </nav>
+
+          <div className="contact-info">
+            <a href="tel:402-303-2541">
+              <i className="fas fa-phone-alt"></i> 402-303-2541
+            </a>
+            <a href="mailto:go-girlpainting@outlook.com">
+              <i className="fas fa-envelope"></i> go-girlpainting@outlook.com
+            </a>
+          </div>
+
+          <div className="social-media">
+            <a
+              href="https://www.facebook.com/profile.php?id=100083751551269"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="/images/facebook-icon.png" alt="Facebook" />
+            </a>
+          </div>
+
+          <p className="footer-text">
+            © {new Date().getFullYear()} Go-Girl Painting LLC. All rights
+            reserved.
+          </p>
+
           <div className="created-by">
-            <p>Created by:</p>
-            <a href="https://www.nunezdev.com" target="_blank" rel="noopener noreferrer">
-              <img src={createdLogo} alt="Website Creator Logo" className="createdLogo" />
+            <p>Website by NunezDev</p>
+            <a
+              href="https://www.nunezdev.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src={createdLogo}
+                alt="NunezDev Logo"
+                className="createdLogo"
+              />
             </a>
           </div>
         </div>

@@ -1,41 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="robots" content="index, follow" />
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#000000" />
+    <title>Go-Girl Painting</title>
+    <meta
+      name="description"
+      content="Professional painting services in Omaha, NE."
+    />
 
-  <!-- SEO Meta Tags -->
-  <title>Go-Girl Painting Services - Commercial & Residential Experts</title>
-  <meta name="description"
-    content="Go-Girl Painting LLC offers expert painting services for homes and businesses. We provide high-quality interior and exterior painting to transform your property." />
+    <link rel="icon" href="https://go-girlpainting.com/logo.png" />
+    <link rel="canonical" href="https://go-girlpainting.com/" />
 
-  <!-- Open Graph (Social Media) Meta Tags -->
-  <meta property="og:title" content="Go-Girl Painting Services" />
-  <meta property="og:description"
-    content="Expert commercial and residential painting services to enhance your property's appearance and durability." />
-  <meta property="og:image" content="/assets/images/commercial-header.jpg" />
-  <meta property="og:url" content="https://go-girlpainting.com" />
-  <meta property="og:type" content="website" />
-
-  <!-- Twitter Meta Tags -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Go-Girl Painting Services" />
-  <meta name="twitter:description" content="Transform your home or business with expert painting services." />
-  <meta name="twitter:image" content="/assets/images/commercial-header.jpg" />
-
-  <!-- Link to Favicon -->
-  <link rel="icon" href="/logo.png" />
-
-  <!-- Structured Data JSON-LD -->
-  <script type="application/ld+json">
+    <!-- Structured Data JSON-LD -->
+    <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": "Go-Girl Painting LLC",
         "url": "https://go-girlpainting.com",
-        "logo": "/logo.png",
+        "logo": "https://go-girlpainting.com/logo.png",
         "description": "Expert painting services for homes and businesses.",
         "address": {
           "@type": "PostalAddress",
@@ -97,23 +84,25 @@
           }
         ]
       }
-      </script>
+    </script>
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2WSLRG2TYH"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-2WSLRG2TYH"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-2WSLRG2TYH");
+    </script>
+  </head>
 
-    gtag('config', 'G-2WSLRG2TYH');
-  </script>
-
-</head>
-
-<body>
-  <noscript>You need to enable JavaScript to run this app.</noscript>
-  <div id="root"></div>
-</body>
-
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+  </body>
 </html>
