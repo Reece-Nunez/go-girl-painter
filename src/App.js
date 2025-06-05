@@ -18,7 +18,7 @@ import {
   faBars,
   faTimes,
 } from "@fortawesome/free-solid-svg-icons";
-import createdLogo from "./assets/images/reece-nunez-high-resolution-logo-transparent.svg";
+import createdLogo from "./assets/images/nunezdev-logo-2.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -627,7 +627,7 @@ function App() {
           </p>
 
           <div className="created-by">
-            <p>Website by NunezDev</p>
+            <p>Website by</p>
             <a
               href="https://www.nunezdev.com"
               target="_blank"
